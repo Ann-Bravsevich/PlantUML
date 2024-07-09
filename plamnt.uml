@@ -1,0 +1,21 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include <tupadr3/devicons2/postgresql>
+!include <tupadr3/devicons/aptana>
+
+
+title 
+<b>Взаимодействие с клиентами</b>
+end title
+
+
+
+Person(user, "Авторизованный пользователь", "Пользователь мобильного приложения") #red
+
+System(mobility_system, "Система мобилити", "Система агрегатор")
+ContainerDb(database1, "База данных",  $sprite="postgresql") #yellow
+SystemQueue(broker, "Брокер сообщений", "Kafka", $sprite="aptana")
+
+
+
+@enduml
